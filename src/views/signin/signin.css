@@ -1,0 +1,232 @@
+.signin {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    animation: slide-in .5s normal;
+}
+
+.signinWrap {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 500px;
+    height: 50%;
+    max-height: 350px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.signinWrap form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signinWrap h2 {
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    color: #151515;
+    margin: 2px auto;
+    font-size: 32px;
+}
+
+.signin #sg-error {
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    color: #c55050;
+    margin: 2px auto;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transition: all .5s cubic-bezier(1, 0, 0.5, 1);
+    transform: translate(-50%, -50%);
+}
+
+.signin #sg-error.unhidden {
+    top: 10px;
+    opacity: 1;
+}
+
+.signinWrap form a {
+    color: #a9a9a9;
+    margin: 5px auto;
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.signinWrap form a:hover {
+    color: #858383;
+    text-decoration: underline;
+}
+
+.signinWrap h3 {
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    color: #151515;
+    margin: 2px auto;
+    font-size: 15px;
+}
+
+.signinWrap h3 a {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signinWrap h3 a:hover {
+    text-decoration: underline;
+}
+
+.signinWrap h3 a::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    content: "\f35d";
+    margin: auto 5px;
+    font-size: 10px;
+}
+
+.signinWrap input {
+    width: 80%;
+    height: 25px;
+    margin: 5px auto;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    padding: 4px;
+    position: relative;
+    padding-left: 35px;
+}
+
+.signinWrap form label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.signinWrap form label[for="sg-email"]::before {
+    position: absolute;
+    font-family: unicons;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    left: 30px;
+    top: 10px;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\ec13';
+    z-index: 10;
+    color: #7c7c7c;
+    font-size: 25px;
+}
+
+.signinWrap form label[for="sg-password"]::before {
+    position: absolute;
+    left: 40px;
+    top: 15px;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    content: "\f084";
+    z-index: 10;
+    color: #7c7c7c;
+    font-size: 15px;
+}
+
+.signinWrap form label[for="sg-username"]::before {
+    position: absolute;
+    font-family: unicons;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    left: 30px;
+    top: 10px;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\ec1b';
+    z-index: 10;
+    color: #7c7c7c;
+    font-size: 25px;
+}
+
+.signin>a {
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.582);
+    margin: 5px auto;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.signin>a:hover {
+    color: wheat;
+}
+
+.signin>a i {
+    color: white;
+    transition: all .5s cubic-bezier(1, 0, 0, 1.2);
+}
+
+.signin>a:hover i {
+    transform: translateX(4px);
+}
+
+.signinWrap form button {
+    width: 200px;
+    height: 40px;
+    margin: 5px auto;
+    border: none;
+    outline: none;
+    color: white;
+    background: #151515c4;
+    border-radius: 4px;
+    border: #151515 1px solid;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.527);
+    font-family: Poppins, sans-serif;
+    letter-spacing: 2px;
+    padding: 4px;
+    transition: all .3s cubic-bezier(1, 0.82, 0.165, 1);
+}
+
+.signinWrap form button:hover {
+    background: #151515;
+}

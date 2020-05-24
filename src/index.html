@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Launcher</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="views/signin/signin.css">
+  <link rel="stylesheet" href="views/home/home.css">
+  <link rel="stylesheet" href="views/settings/settings.css">
+  <link rel="stylesheet" href="views/accounts/accounts.css">
+  <link rel="stylesheet" href="assets/unicons/css/unicons.css">
+  <script src="js/2dskin.js" type="text/javascript"></script>
+  <script src="js/three.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="mount">
+    <!--NAVBAR-->
+    <div class="header">
+      <div class="drag">
+      </div>
+      <div class="upper">
+        <img src="./assets/logo.png" alt="">
+        <ul id="inhomenav" class="navbar">
+          <li to="home">HOME</li>
+          <li to="settings">SETTINGS</li>
+          <li to="account">ACCOUNT</li>
+        </ul>
+        <div class="player" id="user-loader">
+          <img id="player-image" src="./assets/steve.png" alt="">
+          <div accounts="0" id="accounts-menu" class="accounts-menu">
+            <a id="accountstrigger"></a>
+            <p id="account-username"></p>
+            <h3 id="player-playername"></h3>
+            <div id="accountdropbox" class="dropbox">
+              <div class="accounts-btn">
+                <div class="tooltip leftmid">
+                  <a data="target" id="logout" class="uil uil-sign-out-alt"></a>
+                  <span>Log out</span>
+                </div>
+                <div class="tooltip rightmid">
+                  <a data="target" id="add-account" class="uil uil-focus-add"></a>
+                  <span>Add account</span>
+                </div>
+              </div>
+              <ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <a id="minimize" class="uil uil-square">
+        </a>
+        <a id="close" class="uil uil-times">
+        </a>
+      </div>
+    </div>
+    <!--APP-->
+    <div class="background" state="signin"></div>
+    <div id="app" class="app">
+      <!--SIGN IN-->
+      <div id="signin" class="signin invisible">
+        <div class="signinWrap">
+          <h4 id="sg-error"></h4>
+          <h2>SIGN IN</h2>
+          <h3>Create a free account <a id="register">here</a></h3>
+
+          <form id="signin-form">
+            <label for="sg-email">
+              <input type="text" title="Username" required placeholder="Username" name="email" id="sg-email">
+            </label>
+            <label for="sg-password"><input type="password" title="unique password" required placeholder="Password"
+                name="password" id="sg-password"></label>
+            <a>Forgot Your Password?</a>
+            <button type="submit">SIGN IN</button>
+
+          </form>
+          <form id="signin-wihout" class="invisible">
+            <label for="sg-username">
+              <input type="text" title="Username" required placeholder="Username" name="email" id="sg-username">
+            </label>
+            <button type="submit">SIGN IN</button>
+
+          </form>
+        </div>
+        <a id="sg-without">Sign in without account <i class="fas fa-angle-right"></i></a>
+      </div>
+      <!--HOME -->
+      <div id="home" class="divWrap invisible">
+        <div class="homeWrapper">
+          <div class="playWrap">
+            <div class="playMenu">
+              <div class="select-box">
+                <div class="select-box__current" tabindex="1">
+                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
+                    aria-hidden="true" />
+                </div>
+                <ul class="select-box__list">
+
+                </ul>
+              </div>
+              <button id="play-game">PLAY</button>
+            </div>
+          </div>
+          <div class="downloadsWrap">
+            <div class="profile-card">
+              <img src="./assets/logo.png" alt="">
+              <div class="profile-main">
+                <h2>PixelClient v7.8 <span state="stable">Stable</span></h2>
+                <h3>Long Mod List • Cosmetics • 1.7 PvP • Performance Boost • Last Stable Version - <span>More
+                    than 27 mods 7.52MB</span></h3>
+              </div>
+              <div class="profile-stat-off">
+                <button version="7.8" class="start-button">INSTALL</button>
+              </div>
+            </div>
+            <div class="profile-card">
+              <img src="./assets/logo.png" alt="">
+              <div class="profile-main">
+                <h2>PixelClient v7.9 <span state="beta">Beta</span></h2>
+                <h3>Long Mod List • Cosmetics • 1.7 PvP (Old Version) • Performance Boost • Last Beta Version -
+                  <span>More
+                    than 30 mods 11MB</span></h3>
+              </div>
+              <div class="profile-stat-off">
+                <button version="7.9" class="start-button">INSTALL</button>
+              </div>
+            </div>
+            <div class="profile-card">
+              <img src="./assets/logo.png" alt="">
+              <div class="profile-main">
+                <h2>PixelClient Noid <span state="alpha">Alpha</span></h2>
+                <h3>Real Time Skin Changer • Real Time Cape Changer • Real Time Cosmetic Changer • Optifine • Last Alpha
+                  Version - <span>Warning this version is on progress 7MB</span></h3>
+              </div>
+              <div class="profile-stat-off">
+                <button version="noid" class="start-button">INSTALL</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-account" class="modal invisible">
+            <div class="modal-account">
+              <h2>Add Minecraft account</h2>
+              <form id="premium-account">
+                <input type="email" required placeholder="Email" name="email" id="acc-email">
+                <input type="password" title="unique password" required placeholder="Password" name="password"
+                  id="acc-password">
+                <a>Forgot Your Password?</a>
+                <div>
+                  <button class="cancel-button" type="reset">Cancel</button>
+                  <button type="submit">Add</button>
+                </div>
+              </form>
+              <a id="change-premium">No Premium? <i class="fas fa-angle-down"></i></a>
+              <form id="nopremium-account" class="invisible">
+                <input type="text" required placeholder="Nickname">
+                <div>
+                  <button class="cancel-button" type="reset">Cancel</button>
+                  <button type="submit">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--SETTINGS-->
+      <div id="settings" class="divWrap invisible">
+        <div class="settingsWrap"">
+          <div class=" s-options">
+          <ul>
+            <li><a href="#s-general">General</a></li>
+            <li><a href="#s-about">About</a></li>
+            <li><a href="#s-pc">PC</a></li>
+          </ul>
+        </div>
+        <div class="s-configurations">
+          <section id="s-general">
+            <h2>General</h2>
+            <h3>Launcher Settings</h3>
+            <label for="kepplauncheropen"><input type="checkbox" id="kepplauncheropen" class="switch"><span>Keep the
+                launcher open while games are running</span></label>
+            <label for="kepplauncheropen"><input type="checkbox" id="kepplauncheropen" class="switch"><span>Open console
+                log when games start</span></label>
+            <h3>Crash reports</h3>
+            <label for="kepplauncheropen"><input type="checkbox" id="kepplauncheropen"
+                class="switch"><span>Automatically send crash reports to Pixel</span></label>
+          </section>
+          <section id="s-about">
+            <h2>About</h2>
+            <h4>PixelLauncher</h4>
+            <p>Build 1.0.0</p>
+
+            <h3>Libraries</h3>
+            <h5>Electron <span>7.0.0</span></h5>
+            <h5>Electron Forge <span>6.0.0-beta.45</span></h5>
+            <h5>Decompress Zip <span>0.2.2</span></h5>
+            <h5>electron squirrel startup <span>1.0.0</span></h5>
+            <h5>JQuery <span>3.4.1</span></h5>
+            <h5>Socket.io <span>2.3.0</span></h5>
+            <h5>Socket.io stream <span>0.9.1</span></h5>
+            <h5>Three.js <span>r110</span></h5>
+            <h5>Mojang Api <span>0.0.2</span></h5>
+            <h5>Yggdrasil <span>1.1.1</span></h5>
+          </section>
+          <section id="s-pc">
+            <h2>PC</h2>
+            <p id="test"></p>
+          </section>
+          <button>Report a launcher bug</button>
+        </div>
+      </div>
+    </div>
+    <!--ACCOUNT MANAGER-->
+    <div id="account" class="divWrap invisible">
+      <div class="accountWrapper">
+        <canvas id="canvas" width="64" height="64"></canvas>
+        <div class="modelwrapper">
+          <div id="model">
+          </div>
+          <div id="modelcontroller" class="model-controller"></div>
+          <h2 id="model-name"></h2>
+        </div>
+        <div class="pixel-account">
+          <h2 id="pixel-username"><span>Username: </span></h2>
+          <h2 id="pixel-email"><span>Email: </span></h2>
+          <h2 id="pixel-from"><span>Sign in from: </span></h2>
+          <button>Edit profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Disclaimer-->
+  <h3>PixelClient - Not affiliated with Mojang AB.</h3>
+
+  </div>
+  <script src="./js/main.js"></script>
+  <script src="./js/player.js"></script>
+  <script src="./views/signin/signin.js"></script>
+
+</body>
+
+</html>

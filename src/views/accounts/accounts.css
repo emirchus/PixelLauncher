@@ -1,0 +1,121 @@
+.accountWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#canvas {
+    bottom: 5px;
+    left: 86px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+
+#model {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#model>canvas {
+    filter: drop-shadow(0 0 4px black);
+}
+
+#model::before {
+    background: white;
+    border-radius: 8px;
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    z-index: 0;
+}
+
+.model-controller {
+    position: absolute;
+    width: 200px;
+    height: 304px;
+    left: 50%;
+    cursor: move;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.modelwrapper>h2 {
+    position: absolute;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    color: wheat;
+    bottom: -15px;
+    left: 50%;
+    text-align: center;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.modelwrapper>h2 span {
+    color: rgb(180, 180, 180);
+    font-size: 10px;
+}
+
+.modelwrapper {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pixel-account {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto auto;
+}
+
+.pixel-account h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    color: wheat;
+    margin: 5px auto;
+}
+
+.pixel-account h2 span{
+    color: white;
+}
+
+.pixel-account button{
+    -webkit-appearance: none;
+    width: 200px;
+    margin: 5px auto;
+    height: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    border: 1px solid rgb(48, 153, 48);
+    background: rgb(68, 206, 68);
+    border-radius: 6px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: .5;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+
+.pixel-account button:hover{
+    opacity: 1;
+}
